@@ -13,9 +13,9 @@ public class Checker implements Runnable{
     @Override
     public void run() {
         while(holder.getTrigger()){
-            Sleep();
             System.out.println("min value: " + holder.getMin());
             System.out.println("other values: " + holder.dataToString());
+            Sleep();
         }
     }
 
