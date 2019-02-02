@@ -1,17 +1,25 @@
 package test;
 
-import org.junit.Assert;
+
 import org.junit.Test;
 import ru.id61890868.helper.NumParser;
 
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 
 public class NumParserTest {
 
     @Test
     public void parse() throws Exception {
-        System.out.println(NumParser.parse("Nine thousand nine hundred ninety nine"));
-        System.out.println(NumParser.parse("nine hundred ninety nine"));
+        assertEquals(NumParser.parse("one thousand two hundred ninety-eight"), new Integer(1298));
+        assertEquals(NumParser.parse("Seven hundred fifty four"), new Integer(754));
+        assertEquals(NumParser.parse("Sixty"), new Integer(60));
+        assertEquals(NumParser.parse("three"), new Integer(3));
+        assertEquals(NumParser.parse("zero"), new Integer(0));
+        assertEquals(NumParser.parse("Nine thousand eleven"), new Integer(9011));
+
     }
 
     @Test
@@ -23,5 +31,12 @@ public class NumParserTest {
 
         assertNotNull(result);
         assertEquals(result, obj);
+    }
+
+    @Test
+    public void toSingle(){
+        assertEquals(NumParser.toSingle("words"), "word");
+        assertEquals(NumParser.toSingle("wordss"), "words");
+        assertEquals(NumParser.toSingle(" dasajd s"), " dasajd ");
     }
 }

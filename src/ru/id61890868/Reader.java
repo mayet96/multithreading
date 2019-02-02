@@ -1,6 +1,7 @@
 package ru.id61890868;
 
 import ru.id61890868.helper.InputHelper;
+import ru.id61890868.helper.NumParser;
 
 public class Reader extends Holder implements Runnable{
 
@@ -18,7 +19,7 @@ public class Reader extends Holder implements Runnable{
                 stop();
             }else{
                 try {
-                    add(input);
+                    add(NumParser.parse(input));
                 } catch (Exception e) {
                     System.out.println("not valid arg");
                 }

@@ -1,6 +1,5 @@
 package ru.id61890868;
 
-import java.util.Comparator;
 import java.util.NoSuchElementException;
 import java.util.TreeSet;
 
@@ -17,9 +16,9 @@ class Holder {
      *
      * @param o элемент добавляемый в память
      */
-    void add(String o) throws Exception{
+    void add(Integer o) throws Exception{
         ///TODO: input validator
-        data.add(Integer.parseInt(o));
+        data.add(o);
     }
 
     /**
