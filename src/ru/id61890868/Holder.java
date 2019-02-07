@@ -17,8 +17,9 @@ class Holder {
      * @param o элемент добавляемый в память
      */
     void add(Integer o) throws Exception{
-        ///TODO: input validator
-        data.add(o);
+        synchronized (data){
+            data.add(o);
+        }
     }
 
     /**
